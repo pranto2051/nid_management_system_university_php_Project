@@ -1,0 +1,162 @@
+/* Custom Styles for NID System */
+
+/* Container & Layout Fixes */
+* {
+    box-sizing: border-box;
+}
+
+.main-content {
+    overflow-x: hidden;
+    display: block;
+    width: 100%;
+}
+
+.main-content > .row,
+.main-content > .bg-white {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Table & Data Fixes */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+}
+
+.table {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.table thead th {
+    white-space: normal;
+    word-break: break-word;
+}
+
+.table tbody td {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Button & Dropdown Fixes */
+.btn-primary-custom {
+    background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* NID Card Printing */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    body {
+        background: white !important;
+    }
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+/* Loading Spinner */
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Desktop - Ensure proper spacing */
+@media (min-width: 992px) {
+    .main-content {
+        padding: 2rem;
+    }
+    
+    .table th:first-child,
+    .table td:first-child {
+        padding-left: 1rem;
+    }
+    
+    .table th:last-child,
+    .table td:last-child {
+        padding-right: 1rem;
+    }
+}
+
+/* Tablet - Adjust spacing */
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .main-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .table th, .table td {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .px-4 {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+}
+
+/* Mobile - Full width responsiveness */
+@media (max-width: 767.98px) {
+    .main-content {
+        padding: 1rem 0.5rem;
+    }
+    
+    .table {
+        font-size: 0.875rem;
+    }
+    
+    .table th, .table td {
+        padding: 0.5rem 0.25rem;
+        white-space: normal;
+    }
+    
+    .px-4 {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+    
+    .gap-2 {
+        gap: 0.5rem !important;
+    }
+    
+    /* Stack form elements on mobile */
+    .d-flex.flex-md-row {
+        flex-direction: column !important;
+    }
+}
